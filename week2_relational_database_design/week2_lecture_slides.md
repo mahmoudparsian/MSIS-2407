@@ -325,7 +325,7 @@ But OLTP systems usually prefer normalized design.
 # Slide 24 — Week 2 Labs
 
 Each session has a core lab (**a**) and a challenge lab (**b**), started in
-the last ~40 minutes of class and submitted by 11:00 pm.
+the last ~40 minutes of class and submitted on Camino by 11:00 pm Pacific Time.
 
 **Session 3 — Normalization: 1NF → 3NF → BCNF**
 

@@ -389,7 +389,7 @@ Often the answer is both: documents for the app, relational for the warehouse.
 # Slide 29 — Week 4 Labs
 
 Each session has a core lab (**a**) and a challenge lab (**b**), started in
-the last ~40 minutes of class and submitted by 11:00 pm.
+the last ~40 minutes of class and submitted on Camino by 11:00 pm Pacific Time.
 
 **Session 7 — From OLTP to a star schema**
 

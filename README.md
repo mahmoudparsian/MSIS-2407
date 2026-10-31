@@ -120,7 +120,7 @@ systems.
 - Every lab is a Marimo notebook with built-in **self-checks** that print ✅
   when a task is right, so you know before you submit.
 - Labs are published in [`LABS/`](LABS/) at the start of each lab block;
-  solutions are added after the 11:00 pm deadline.
+  solutions are added after the 11:00 pm Pacific Time deadline.
 
 The full policy — attendance, late submissions, and the Final Exam format — is
 in [`ASSIGNMENTS_and_GRADING.md`](course_information/ASSIGNMENTS_and_GRADING.md).
@@ -256,10 +256,10 @@ exam slot after Session 10.
 | [`week3_database_implementation/`](week3_database_implementation/README.md) | Week 3 — Database Implementation |
 | [`week4_data_warehousing/`](week4_data_warehousing/README.md) | Week 4 — Analytical and Non-Relational Data Systems |
 | [`week5_database_management/`](week5_database_management/README.md) | Week 5 — Database Administration and Management |
-| [`LABS/`](LABS/README.md) | **This term's labs**, published during each session (one folder per session); solutions are added after the 11:00 pm deadline |
+| [`LABS/`](LABS/README.md) | **This term's labs**, published during each session (one folder per session); solutions are added after the 11:00 pm Pacific Time deadline |
 | [`course_information/`](course_information/) | Grading, academic conduct, office hours, and required software — [see below](#course-policies--information) |
 | [`software_installation/`](software_installation/) | Step-by-step macOS and Windows setup and verification, with troubleshooting guides |
-| [`datasets/`](datasets/) | Reference datasets for self-study — an OLTP retail schema, a star schema, medallion-architecture (bronze / silver / gold) tables, and samples |
+| [`datasets/`](datasets/) | Reference datasets for self-study — an OLTP retail schema, a star schema, medallion-architecture (bronze / silver / gold) tables, small Week 1 and Week 2 practice tables, and samples |
 | [`tools/`](tools/) | Notebook validation scripts |
 
 ---
