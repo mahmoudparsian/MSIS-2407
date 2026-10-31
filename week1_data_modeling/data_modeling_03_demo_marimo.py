@@ -430,9 +430,14 @@ def _(con, duckdb):
         con.execute("INSTALL fts; LOAD fts")
         con.execute("PRAGMA create_fts_index('adjuster_note', 'note_id', 'body')")
         bm25 = con.execute("""
-        SELECT note_id,
-               round(fts_main_adjuster_note.match_bm25(note_id, 'crushed airbag'), 3) AS score
-        FROM adjuster_note WHERE score IS NOT NULL ORDER BY score DESC
+        SELECT note_id, score
+        FROM (
+            SELECT note_id,
+                   round(fts_main_adjuster_note.match_bm25(note_id, 'crushed airbag'), 3) AS score
+            FROM adjuster_note
+        )
+        WHERE score IS NOT NULL
+        ORDER BY score DESC
         """).df()
         assert bm25["note_id"].tolist() == [5, 3, 1]
     except duckdb.IOException as _e:

@@ -17,8 +17,8 @@ core setup is just **Python plus three packages**.
 
 | # | Tool | Needed for | Install |
 |:---:|---|---|---|
-| 1 | [Python](#1-python) | Everything | [python.org](https://www.python.org/downloads/) — 3.10+ |
-| 2 | [DuckDB](#2-duckdb) | Every lab and notebook | `pip install duckdb` |
+| 1 | [Python](#1-python) | Everything | [python.org](https://www.python.org/downloads/) — 3.11+ |
+| 2 | [DuckDB](#2-duckdb) | Every lab and notebook | `pip install "duckdb>=2.0"` |
 | 3 | [Marimo](#3-marimo-notebook) | Every lab and notebook | `pip install "marimo[sql]"` |
 | 4 | [Pandas](#4-pandas) | Every lab and notebook | `pip install pandas` |
 | 5 | [MySQL](#5-mysql-week-3-walkthrough-only) | *Optional* — one Week 3 walkthrough | [dev.mysql.com](https://dev.mysql.com/downloads/) + `pip install mysql-connector-python` |
@@ -31,7 +31,7 @@ core setup is just **Python plus three packages**.
 
 🔗 [python.org](https://www.python.org)
 
-**Version:** 3.10 or higher (we recommend 3.12+).
+**Version:** 3.11 or higher (we recommend 3.12+).
 
 ---
 
@@ -44,7 +44,7 @@ inside your Python process — no server to install or configure. It is the
 engine for every lab, every week notebook, and every example in this course.
 
 ```bash
-pip install duckdb
+pip install "duckdb>=2.0"
 ```
 
 ---
@@ -147,7 +147,7 @@ in Step 5 of the [installation guide](../software_installation/README.md).
 | *Optional* | MySQL Community Server + `pip install mysql-connector-python` (Week 3 walkthrough) · a diagramming tool · the lock-down browser before the Final |
 
 ```bash
-pip install duckdb "marimo[sql]" pandas
+pip install "duckdb>=2.0" "marimo[sql]" pandas
 ```
 
 **Step-by-step setup guides** for each operating system — with a setup

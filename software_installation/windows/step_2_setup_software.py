@@ -10,7 +10,7 @@ PURPOSE
 -------
 Run this script AFTER you have installed Python (Step 1).
 It will:
-  1. Check that your Python version is 3.10 or higher
+  1. Check that your Python version is 3.11 or higher
   2. Install the required packages (duckdb, pandas, marimo, sqlglot)
   3. Verify each package works correctly
   4. Run a small DuckDB query to prove everything is working
@@ -33,8 +33,8 @@ import subprocess
 def check_python():
     v = sys.version.split()[0]
     major, minor = sys.version_info.major, sys.version_info.minor
-    if major < 3 or (major == 3 and minor < 10):
-        print(f"  [X] FAIL  Python {v} — Need 3.10 or higher")
+    if major < 3 or (major == 3 and minor < 11):
+        print(f"  [X] FAIL  Python {v} — Need 3.11 or higher (DuckDB 2.0 requires it)")
         print()
         print("  HOW TO FIX:")
         print("    1. Go to https://www.python.org/downloads/")
@@ -76,7 +76,8 @@ def is_externally_managed(result):
 def install_packages():
     # sqlglot is needed by Marimo itself to run SQL cells — without it,
     # Marimo shows "The following packages are required to execute sql: sqlglot".
-    packages = ["duckdb", "pandas", "marimo", "sqlglot"]
+    # "duckdb>=2.0" also upgrades an older DuckDB that is already installed.
+    packages = ["duckdb>=2.0", "pandas", "marimo", "sqlglot"]
     explained = False
 
     print()
@@ -123,15 +124,15 @@ def verify_packages():
     print()
     results = []
 
-    # DuckDB — the course needs 1.0 or newer
+    # DuckDB — the course needs 2.0 or newer
     try:
         import duckdb
-        r = duckdb.query("SELECT 42 AS answer").fetchone()
+        r = duckdb.query("SELECT 42 AS answer").fetchall()[0]
         assert r[0] == 42
-        if int(duckdb.__version__.split(".")[0]) < 1:
+        if int(duckdb.__version__.split(".")[0]) < 2:
             results.append(
-                ("DuckDB", f"{duckdb.__version__} is too old, need 1.0 or newer "
-                           f"— run: pip install --upgrade duckdb", False)
+                ("DuckDB", f"{duckdb.__version__} is too old, need 2.0 or newer "
+                           f"— run: pip install --upgrade \"duckdb>=2.0\"", False)
             )
         else:
             results.append(("DuckDB", duckdb.__version__, True))

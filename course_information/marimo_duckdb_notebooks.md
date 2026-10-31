@@ -50,7 +50,7 @@ deliberate.
 ## Requirements
 
 ```bash
-pip install duckdb pandas "marimo[sql]"
+pip install "duckdb>=2.0" pandas "marimo[sql]"
 ```
 
 See [`REQUIRED_SOFTWARE.md`](REQUIRED_SOFTWARE.md) for details.

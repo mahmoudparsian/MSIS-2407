@@ -11,7 +11,7 @@ DuckDB runs inside Python and is installed using **pip**.
 We recommend installing it using:
 
 ```bash
-python3 -m pip install duckdb
+python3 -m pip install "duckdb>=2.0"
 ```
 
 > **Full setup guide:** for every tool the course needs, follow
@@ -22,7 +22,7 @@ python3 -m pip install duckdb
 
 # Step 1 — Install Python (if needed)
 
-Download Python **3.10 or newer** from:
+Download Python **3.11 or newer** from:
 
 https://www.python.org/downloads/
 
@@ -47,7 +47,7 @@ Example output:
 Python 3.12.x
 ```
 
-If you see `3.10` or higher, Python is installed correctly.
+If you see `3.11` or higher, Python is installed correctly.
 
 ---
 
@@ -56,7 +56,7 @@ If you see `3.10` or higher, Python is installed correctly.
 Run in Terminal:
 
 ```bash
-python3 -m pip install duckdb
+python3 -m pip install "duckdb>=2.0"
 ```
 
 Why this command?
@@ -85,7 +85,7 @@ print(duckdb.__version__)
 Example output (the course needs **1.0 or newer**):
 
 ```
-1.x.x
+2.x.x
 ```
 
 ---

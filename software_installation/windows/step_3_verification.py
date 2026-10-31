@@ -57,10 +57,10 @@ def _():
     version = sys.version.split()[0]
     major, minor = sys.version_info.major, sys.version_info.minor
 
-    if (major, minor) >= (3, 10):
+    if (major, minor) >= (3, 11):
         print(f"  [+] PASS  Python {version}")
     else:
-        print(f"  [X] FAIL  Need Python 3.10+, you have {version}")
+        print(f"  [X] FAIL  Need Python 3.11+, you have {version}")
         print(f"            Download from https://www.python.org/downloads/")
     return (sys,)
 
@@ -77,9 +77,13 @@ def _(mo):
 def _():
     import duckdb as _duckdb
 
-    _result = _duckdb.query("SELECT 42 AS answer").fetchone()
+    _result = _duckdb.query("SELECT 42 AS answer").fetchall()[0]
     assert _result[0] == 42
-    print(f"  [+] PASS  DuckDB {_duckdb.__version__}")
+    if int(_duckdb.__version__.split(".")[0]) >= 2:
+        print(f"  [+] PASS  DuckDB {_duckdb.__version__}")
+    else:
+        print(f"  [X] FAIL  Need DuckDB 2.0+, you have {_duckdb.__version__}")
+        print('            Run: pip install --upgrade "duckdb>=2.0"')
     return
 
 

@@ -38,7 +38,7 @@ and where each tool normally lives:
 |------|-------------------|-----------------|
 | Python (`python`, `pip`) | checking **"Add python.exe to PATH"** during install (Step 1 of the main setup) | `C:\Users\YourName\AppData\Local\Programs\Python\Python312\` |
 | Marimo (`marimo`) | `pip install marimo` (Step 2 of the main setup) | `...\Python312\Scripts\` |
-| DuckDB (Python package) | `pip install duckdb` | not a command — it's a Python import, no PATH needed |
+| DuckDB (Python package) | `pip install "duckdb>=2.0"` | not a command — it's a Python import, no PATH needed |
 
 **If a command still says "not recognized" after installing it,** add
 its folder to PATH by hand:
@@ -232,7 +232,7 @@ last few weeks), some packages this course needs may not have a
 ready-made install for it yet, and `pip` tries to compile it from
 scratch — which fails without extra developer tools. Simplest fix:
 uninstall it and install **Python 3.12** instead (still meets the
-3.10+ requirement, and everything has ready-made installs for it). See
+3.11+ requirement, and everything has ready-made installs for it). See
 [`step_1_install_python.md`](step_1_install_python.md).
 
 ### `marimo edit` doesn't open a browser tab by itself

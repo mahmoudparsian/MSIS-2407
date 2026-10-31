@@ -80,14 +80,14 @@ DuckDB is designed for:
 Install using pip:
 
 ```bash
-python3 -m pip install duckdb
+python3 -m pip install "duckdb>=2.0"
 ```
 
 Verify installation:
 
 ```python
 import duckdb
-print(duckdb.__version__)   # 1.x.x
+print(duckdb.__version__)   # 2.x.x
 ```
 
 Works on Mac, Windows, and Linux.

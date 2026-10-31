@@ -24,7 +24,7 @@ This folder contains everything you need to set up your Mac for MSIS-2407. Follo
 
 | Software | What It Is | Minimum Version | Installed In | Verified In |
 |----------|-----------|-----------------|---------------|-------------|
-| [Python](https://www.python.org) | Programming language — the foundation everything else runs on | 3.10+ (3.12+ recommended) | Step 1 | Steps 1, 2, 3 |
+| [Python](https://www.python.org) | Programming language — the foundation everything else runs on | 3.11+ (3.12+ recommended) | Step 1 | Steps 1, 2, 3 |
 | [DuckDB](https://duckdb.org) | In-process SQL database engine — no server to install or configure | 1.0+ | Step 2 | Steps 2, 3 |
 | [Marimo](https://marimo.io) | Interactive notebook environment (replaces Jupyter for this course) | any recent | Step 2 | Steps 2, 3 |
 | [Pandas](https://pandas.pydata.org) | Data manipulation library — DuckDB query results come back as Pandas tables | any recent | Step 2 | Steps 2, 3 |
@@ -186,6 +186,9 @@ both of these:
 ```
 python3 -c "import duckdb; print(duckdb.__version__)"
 ```
+
+It must print a version starting with **2.** (for example `2.0.0`). If it
+starts with `1.`, run `python3 -m pip install --upgrade "duckdb>=2.0"`.
 
 **2. Marimo check** — run this in a Marimo cell:
 

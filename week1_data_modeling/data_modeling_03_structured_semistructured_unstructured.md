@@ -601,9 +601,11 @@ with **BM25**, the refinement of TF-IDF used by most search engines:
 INSTALL fts; LOAD fts;                 -- one-time download (needs internet)
 PRAGMA create_fts_index('adjuster_note', 'note_id', 'body');
 
-SELECT note_id,
-       round(fts_main_adjuster_note.match_bm25(note_id, 'crushed airbag'), 3) AS score
-FROM adjuster_note WHERE score IS NOT NULL ORDER BY score DESC;
+SELECT note_id, score
+FROM (SELECT note_id,
+             round(fts_main_adjuster_note.match_bm25(note_id, 'crushed airbag'), 3) AS score
+      FROM adjuster_note)
+WHERE score IS NOT NULL ORDER BY score DESC;
 ```
 ```text
  note_id │ score
