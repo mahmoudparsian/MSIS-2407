@@ -1,0 +1,11 @@
+% python3 create_mysql_table_load_local.py mysql_config.json employees.csv employees2
+Table 'employees2' created (or already existed).
+LOAD DATA LOCAL INFILE affected 20 rows.
+Table 'employees2' now has 20 rows.
+
+Sample rows:
+(1, 'Alice', 'Johnson', 'Engineering', datetime.date(2019, 3, 14), Decimal('95000.00'))
+(2, 'Brian', 'Smith', 'Sales', datetime.date(2020, 7, 1), Decimal('62000.00'))
+(3, 'Carla', 'Nguyen', 'Marketing', datetime.date(2018, 11, 23), Decimal('58000.00'))
+(4, 'David', 'Brown', 'Engineering', datetime.date(2021, 1, 11), Decimal('88000.00'))
+(5, 'Emma', 'Davis', 'Finance', datetime.date(2017, 5, 30), Decimal('72000.00'))

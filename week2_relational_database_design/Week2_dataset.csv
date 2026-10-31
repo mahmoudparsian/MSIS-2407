@@ -1,0 +1,6 @@
+order_id,customer_name,customer_email,product_name,category,price,quantity,order_date
+1,Alice,alice@gmail.com,Laptop,Electronics,1200,1,2025-01-01
+1,Alice,alice@gmail.com,Mouse,Electronics,25,2,2025-01-01
+2,Bob,bob@gmail.com,Phone,Electronics,800,1,2025-01-02
+3,Charlie,charlie@gmail.com,Tablet,Electronics,300,3,2025-01-03
+3,Charlie,charlie@gmail.com,Headphones,Electronics,150,1,2025-01-03

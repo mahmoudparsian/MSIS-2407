@@ -1,0 +1,8 @@
+.env*
+CLAUDE.md*
+/instructor/
+__marimo__/
+__pycache__/
+# DuckDB database files are built by the notebooks/scripts, never committed
+*.duckdb
+*.duckdb.wal

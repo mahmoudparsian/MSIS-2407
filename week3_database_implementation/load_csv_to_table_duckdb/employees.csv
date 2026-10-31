@@ -1,0 +1,21 @@
+employee_id,first_name,last_name,department,hire_date,salary
+1,Alice,Johnson,Engineering,2019-03-14,95000.00
+2,Brian,Smith,Sales,2020-07-01,62000.00
+3,Carla,Nguyen,Marketing,2018-11-23,58000.00
+4,David,Brown,Engineering,2021-01-11,88000.00
+5,Emma,Davis,Finance,2017-05-30,72000.00
+6,Frank,Miller,Sales,2022-02-18,60500.00
+7,Grace,Wilson,Human Resources,2016-09-09,65000.00
+8,Henry,Moore,Engineering,2020-10-05,91000.00
+9,Ivy,Taylor,Marketing,2019-06-17,59500.00
+10,Jack,Anderson,Finance,2015-12-01,78000.00
+11,Karen,Thomas,Sales,2021-08-22,61000.00
+12,Liam,Jackson,Engineering,2018-04-02,99000.00
+13,Mia,White,Human Resources,2022-05-13,64000.00
+14,Noah,Harris,Marketing,2017-10-19,57000.00
+15,Olivia,Martin,Finance,2020-03-27,74500.00
+16,Peter,Thompson,Engineering,2019-09-08,93000.00
+17,Quinn,Garcia,Sales,2016-06-15,63000.00
+18,Rachel,Martinez,Human Resources,2021-11-30,66000.00
+19,Samuel,Robinson,Finance,2018-01-25,79500.00
+20,Tina,Clark,Marketing,2022-08-04,58500.00
