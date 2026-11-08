@@ -798,6 +798,25 @@ per product, per order.
 
 ---
 
+# 🏢 Weak Entities
+
+Some entities **cannot be identified on their own**. Room `101` exists in many
+buildings — a room number is only unique *inside* its building:
+
+```
+Building 1───< Room          key of Room = building_code + room_no
+```
+
+- **Weak entity** (`Room`) — exists only together with its **owner** (strong
+  entity, `Building`) and is identified by the owner's key **plus** its own
+  **partial key** (`room_no`).
+- **Identifying relationship** — the link to the owner; every room *must* have
+  one (mandatory participation).
+- **As a table:** composite primary key `(building_code, room_no)`, and
+  `building_code` is also a foreign key — mapped in Week 2.
+
+---
+
 # 🔗 Associative Entities: When a Relationship Has Its Own Data
 
 `order_items` looks like a plain bridge table, but look closer: it holds
@@ -1220,7 +1239,7 @@ transactional and analytics systems.
 - Cardinality **and** participation — two independent, both-required properties
   of a relationship
 - Primary, foreign, candidate, composite, and surrogate keys
-- Many-to-many relationships, bridge tables, and associative entities
+- Many-to-many relationships, bridge tables, associative and weak entities
 - Self-referencing relationships, and querying them with recursive CTEs
 - EER: specialization/generalization, disjoint/overlapping, total/partial
 - Common design mistakes and how to avoid them

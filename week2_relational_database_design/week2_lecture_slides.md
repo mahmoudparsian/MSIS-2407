@@ -138,7 +138,43 @@ CREATE TABLE order_items (
 
 ---
 
-# Slide 11 — Integrity Constraints
+# Slide 11 — More Mapping Rules: 1:1 and Weak Entities
+
+**1:1** — FK on the side where every row has a partner, made `UNIQUE`:
+
+```sql
+CREATE TABLE store (
+  store_id   INT PRIMARY KEY,
+  manager_id INT NOT NULL UNIQUE
+    REFERENCES employee(employee_id)
+);
+```
+
+**Weak entity** — owner's key + partial key = primary key:
+
+```sql
+CREATE TABLE room (
+  building_code VARCHAR REFERENCES building(building_code),
+  room_no       VARCHAR,
+  PRIMARY KEY (building_code, room_no)
+);
+```
+
+---
+
+# Slide 12 — Mapping a Specialization
+
+Week 1's `Payment` → `Card` / `Bank transfer`. Three options:
+
+1. **Supertype + a table per subtype** — `payment` + `card_payment` + `bank_transfer_payment`; each subtype's PK is also an FK to `payment` (the default)
+2. **One table + type column** — every column in `payment`; the other type's columns stay `NULL` (few subtype columns)
+3. **A table per subtype only** — each repeats `order_id`, `amount` (only if total *and* disjoint)
+
+`payment_type` — the **subtype discriminator** — says which subtype a row is.
+
+---
+
+# Slide 13 — Integrity Constraints
 
 Common constraints:
 
@@ -158,7 +194,7 @@ These ensure data quality.
 
 ---
 
-# Slide 12 — Data Anomalies
+# Slide 14 — Data Anomalies
 
 When one table does the job of several entities, three things go wrong:
 
@@ -170,7 +206,7 @@ Normalization removes the cause.
 
 ---
 
-# Slide 13 — Functional Dependencies
+# Slide 15 — Functional Dependencies
 
 `X → Y` ("X determines Y"): any two rows that agree on X must agree on Y.
 
@@ -185,7 +221,7 @@ a few sample rows.
 
 ---
 
-# Slide 14 — What is Normalization?
+# Slide 16 — What is Normalization?
 
 Normalization improves database structure.
 
@@ -197,7 +233,7 @@ Goals:
 
 ---
 
-# Slide 15 — First Normal Form (1NF)
+# Slide 17 — First Normal Form (1NF)
 
 1NF requirements:
 
@@ -210,7 +246,7 @@ multiple values in one column.
 
 ---
 
-# Slide 16 — Example of 1NF Violation
+# Slide 18 — Example of 1NF Violation
 
 Bad table:
 
@@ -225,7 +261,7 @@ Use order_items table.
 
 ---
 
-# Slide 17 — Second Normal Form (2NF)
+# Slide 19 — Second Normal Form (2NF)
 
 Requirements:
 
@@ -240,7 +276,7 @@ price depends on product_id alone → move it to products.
 
 ---
 
-# Slide 18 — Third Normal Form (3NF)
+# Slide 20 — Third Normal Form (3NF)
 
 Requirements:
 
@@ -257,7 +293,7 @@ Email belongs to the customer, not the order → move it to customers.
 
 ---
 
-# Slide 19 — Boyce–Codd Normal Form (BCNF)
+# Slide 21 — Boyce–Codd Normal Form (BCNF)
 
 Rule: every determinant must be a superkey.
 
@@ -274,7 +310,7 @@ Trade-off: BCNF can lose a dependency that 3NF would keep.
 
 ---
 
-# Slide 20 — A Note on 4NF
+# Slide 22 — A Note on 4NF
 
 Two **independent** multivalued facts in one table:
 
@@ -289,7 +325,7 @@ claim_adjusters(claim_id, adjuster)
 
 ---
 
-# Slide 21 — Benefits of Normalization
+# Slide 23 — Benefits of Normalization
 
 Normalization:
 
@@ -299,7 +335,7 @@ Normalization:
 
 ---
 
-# Slide 22 — Denormalization
+# Slide 24 — Denormalization
 
 Sometimes systems intentionally denormalize.
 
@@ -312,7 +348,7 @@ But OLTP systems usually prefer normalized design.
 
 ---
 
-# Slide 23 — Relational Design Workflow
+# Slide 25 — Relational Design Workflow
 
 1. Design ER diagram
 2. Convert entities → tables
@@ -322,7 +358,7 @@ But OLTP systems usually prefer normalized design.
 
 ---
 
-# Slide 24 — Week 2 Labs
+# Slide 26 — Week 2 Labs
 
 Each session has a core lab (**a**) and a challenge lab (**b**), started in
 the last ~40 minutes of class and submitted on Camino by 11:00 pm Pacific Time.

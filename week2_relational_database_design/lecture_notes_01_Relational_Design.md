@@ -195,6 +195,67 @@ real-world standard for every M:N relationship you will ever model.
 
 ---
 
+# 🔗 More Mapping Rules: 1:1 and Weak Entities
+
+**1:1** — put the foreign key on the side where *every* row has a partner, and
+make it `UNIQUE` (that is what turns 1:M into 1:1). Every store has exactly one
+manager; an employee manages at most one store:
+
+```sql
+CREATE TABLE store (
+    store_id   INTEGER PRIMARY KEY,
+    city       VARCHAR NOT NULL,
+    manager_id INTEGER NOT NULL UNIQUE REFERENCES employee(employee_id)
+);
+```
+
+---
+
+# 🔗 More Mapping Rules: 1:1 and Weak Entities (cont.)
+
+**Weak entity** (Week 1: `Room` inside `Building`) — the owner's key plus the
+partial key form the primary key; the owner's key is also a foreign key:
+
+```sql
+CREATE TABLE room (
+    building_code VARCHAR NOT NULL REFERENCES building(building_code),
+    room_no       VARCHAR NOT NULL,
+    seats         INTEGER,
+    PRIMARY KEY (building_code, room_no)
+);
+```
+
+---
+
+# 🧬 Mapping a Specialization: Three Options
+
+Week 1's `Payment` → `Card` / `Bank transfer` (disjoint, total) can become tables
+in three ways:
+
+| Option | Tables | Choose it when |
+|---|---|---|
+| **1. Supertype + one table per subtype** | `payment` + `card_payment` + `bank_transfer_payment`; each subtype's PK is also an FK to `payment` | the default: subtype columns can be `NOT NULL`, subtypes can have their own relationships |
+| **2. One table + type column** | `payment` holds every column; subtype columns are `NULL` for the other type | few subtype columns; most queries read all payments |
+| **3. One table per subtype only** | `card_payment` and `bank_transfer_payment`, each repeating `order_id`, `amount` | total **and** disjoint, and the kinds are rarely queried together |
+
+---
+
+# 🧬 Mapping a Specialization: Three Options (cont.)
+
+Options 1 and 2 keep a `payment_type` column — the **subtype discriminator** — that
+says which subtype a row belongs to. Option 1's subtype table shares the
+supertype's key:
+
+```sql
+CREATE TABLE card_payment (                      -- option 1
+    payment_id INTEGER PRIMARY KEY REFERENCES payment(payment_id),
+    card_last4 CHAR(4) NOT NULL,
+    auth_code  VARCHAR NOT NULL
+);
+```
+
+---
+
 # 💥 What Happens Without This Discipline: Redundancy
 
 One flat table instead of four — real rows from the Week 2 dataset:
