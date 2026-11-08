@@ -11,7 +11,7 @@
 |---|---|
 | **Format** | 5 weeks · 10 sessions (Tuesday and Thursday, 7:35–9:10 pm, 95 minutes each) |
 | **Credit** | 2 units |
-| **Quarter** | Winter 2027 (weeks 6–10) |
+| **Quarter** | Winter 2027 — weeks 6–10 (February 9 – March 11, 2027) |
 | **Instructor** | Dr. Mahmoud Parsian |
 | **Builds on** | MSIS-2402 — Database Management Systems: Fundamentals of SQL |
 | **Primary tools** | [DuckDB](https://duckdb.org) · [Marimo](https://marimo.io) notebooks · Python · MySQL (Week 3) |

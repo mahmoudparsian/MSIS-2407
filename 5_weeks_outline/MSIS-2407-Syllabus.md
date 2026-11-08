@@ -22,8 +22,9 @@ style: |
 # 🎓 MSIS-2407
 ## DBMS - Design, Development & Administration
 
-* 2 Units · 5 Weeks · Winter 2027 (weeks 6–10)
+* 2 Units · 5 Weeks · Winter 2027 (weeks 6–10: February 9 – March 11, 2027)
 * Tuesday & Thursday, 7:35–9:10 pm — 10 sessions of 95 minutes
+* Sessions: Feb 9, 11, 16, 18, 23, 25 · Mar 2, 4, 9, 11
 * Instructor: Dr. Mahmoud Parsian
 
 ---
