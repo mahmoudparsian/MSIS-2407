@@ -23,7 +23,7 @@ def _(mo):
     slides quote.
 
     ```bash
-    pip install "marimo[sql]" duckdb pandas
+    pip install "marimo[sql]" "duckdb>=2.0" pandas
     marimo edit data_modeling_03_demo_marimo.py
     ```
 

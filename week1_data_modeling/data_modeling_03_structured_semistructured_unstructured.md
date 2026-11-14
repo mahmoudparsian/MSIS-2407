@@ -58,7 +58,7 @@ style: |
 | **C** | Intermediate — unstructured | metadata & retention · extraction with provenance · keyword search · semantic search · PII in text | optional reading |
 | **D** | Putting it together | governance across the spectrum · a decision framework · common mistakes | optional reading |
 
-Every query in this deck was run in **DuckDB 1.5.5**; the outputs shown are real.
+Every query in this deck was run in **DuckDB 2.0.0**; the outputs shown are real.
 The companion notebook `data_modeling_03_demo_marimo.py` runs all of them.
 
 ---

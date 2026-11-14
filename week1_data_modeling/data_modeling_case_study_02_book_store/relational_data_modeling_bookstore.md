@@ -56,7 +56,7 @@ We move through three levels of abstraction, each answering a different question
 
 A good model is **traceable**: every table, column, and constraint should trace back to a specific business requirement. We'll hold ourselves to that standard throughout.
 
-DuckDB is used as our target engine because it is a fully standards-compliant relational database (`PRIMARY KEY`, `FOREIGN KEY`, `CHECK`, `ENUM`) that needs no server setup — every statement in this deck was actually executed, live, against DuckDB 1.5.
+DuckDB is used as our target engine because it is a fully standards-compliant relational database (`PRIMARY KEY`, `FOREIGN KEY`, `CHECK`, `ENUM`) that needs no server setup — every statement in this deck was actually executed, live, against DuckDB 2.0.0.
 
 ---
 
@@ -614,7 +614,7 @@ CREATE TABLE books (
 
 # Physical DDL — `authors`, `publishers`, `books` (cont.)
 
-Executed against DuckDB 1.5 with zero errors.
+Executed against DuckDB 2.0.0 with zero errors.
 
 ---
 

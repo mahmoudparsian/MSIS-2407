@@ -47,7 +47,7 @@ The goal is to nail the core vocabulary — entity, attribute, primary key, fore
 7. sample data and queries
 8. summary.
 
-Every SQL statement in this deck was executed, live, against DuckDB 1.5.
+Every SQL statement in this deck was executed, live, against DuckDB 2.0.0.
 
 ---
 
@@ -168,7 +168,7 @@ CREATE TABLE tracks (
 
 # Step 4 — Physical DDL in DuckDB (cont.)
 
-Executed against DuckDB 1.5 with zero errors — no sequences or `ENUM` types needed here (contrast with the other two case studies), because this model has no controlled-vocabulary attribute and our sample data is small enough to assign IDs by hand.
+Executed against DuckDB 2.0.0 with zero errors — no sequences or `ENUM` types needed here (contrast with the other two case studies), because this model has no controlled-vocabulary attribute and our sample data is small enough to assign IDs by hand.
 
 ---
 
